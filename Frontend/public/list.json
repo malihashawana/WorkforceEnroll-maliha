@@ -1,0 +1,19 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "e928489a-cad2-455d-8d88-8b1f3287a8d0",
+      "favorite": {
+        "name": "Tasnim",
+        "color": "color7"
+      },
+      "savedConnectionType": "favorite",
+      "connectionOptions": {
+        "connectionString": "mongodb://localhost:27017/"
+      }
+    }
+  ]
+}
