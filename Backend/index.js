@@ -13,6 +13,8 @@ import user1Router from './route/company.route.js';
 import user2Router from './route/admin1.route.js';
 import jobsRouter from './route/jobs.route.js';
 import applicationsRouter from './route/applications.route.js';
+import passwordResetRouter from './route/passwordReset.route.js';
+import profileRouter from './route/profile.route.js';
 
 
 dotenv.config();
@@ -71,13 +73,15 @@ app.use('/uploads', express.static(uploadsDir, {
 }));
 
 
-// Use the multer middleware directly in the applications route
+// Route configurations
 app.use('/book', bookRouter);
 app.use('/user', userRouter);
 app.use('/user1', user1Router);
 app.use('/user2', user2Router);
 app.use('/jobs', jobsRouter);
 app.use('/applications', applicationsRouter);
+app.use('/password-reset', passwordResetRouter);
+app.use('/profile', profileRouter);
 
 
 // Error handling middleware
@@ -106,3 +110,5 @@ mongoose.connect(URI)
     console.error('MongoDB connection error:', error);
     process.exit(1);
   });
+
+

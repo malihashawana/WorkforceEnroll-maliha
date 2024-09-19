@@ -15,5 +15,8 @@
     "url": "https://github.com/Tasnimrahman04/Workforce_Enroll/issues"
   },
   "homepage": "https://github.com/Tasnimrahman04/Workforce_Enroll#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
 }

@@ -7,6 +7,7 @@ import { IconButton, InputAdornment, TextField } from '@mui/material'; // Import
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
+
 function Login_Jobseeker() {
   const {
     register,
@@ -14,13 +15,16 @@ function Login_Jobseeker() {
     formState: { errors },
   } = useForm();
 
+
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false); // State to handle password visibility
+
 
   const onSubmit = async (data) => {
     try {
       const response = await axios.post("http://localhost:4001/user/login_jobseeker", data);
       const userData = response.data.user;
+
 
       if (userData) {
         localStorage.setItem("Users", JSON.stringify(userData));
@@ -33,11 +37,13 @@ function Login_Jobseeker() {
     }
   };
 
+
   const handleCloseModal = (event) => {
     event.preventDefault();
     document.getElementById("my_modal_jobseeker").close();
     navigate("/");
   };
+
 
   return (
     <dialog id="my_modal_jobseeker" className="modal">
@@ -51,7 +57,9 @@ function Login_Jobseeker() {
             ✕
           </button>
 
+
           <h3 className="font-bold text-lg cursor-default">Login</h3>
+
 
           <div className='mt-4 space-y-2'>
             <span>Email</span>
@@ -65,6 +73,7 @@ function Login_Jobseeker() {
             <br />
             {errors.email && <span className="text-sm text-red-500">This field is required</span>}
           </div>
+
 
           <div className='mt-4 space-y-2'>
             <span>Password</span>
@@ -91,6 +100,10 @@ function Login_Jobseeker() {
             <br />
             {errors.password && <span className="text-sm text-red-500">This field is required</span>}
           </div>
+          <Link to="/forget_password" className="text-blue-500 underline text-sm cursor-pointer">
+             Forgot Password?
+          </Link>
+
 
           <div className='flex justify-around mt-4'>
             <button type="submit" className='bg-purple-500 text-white rounded-md px-3 py-1 hover:bg-purple-700 duration-300'>Login</button>
@@ -103,5 +116,6 @@ function Login_Jobseeker() {
     </dialog>
   );
 }
+
 
 export default Login_Jobseeker;

@@ -31,6 +31,11 @@ import CompanyDetails from './components/CompanyDetails';
 
 import ApplicantsTable from './components/ApplicantsTable';
 
+import Forget_password from './components/Forget_password';
+import ResetPassword from './components/ResetPassword';
+
+import ProfilePage from './components/ProfilePage';
+
 
 
 
@@ -52,8 +57,6 @@ function App() {
           <Route path="/login_jobseeker" element={<LoginJobseeker />} />
           <Route path="/login_admin" element={<LoginAdmin />} />
           <Route path="/signup_admin" element={<SignupAdmin />} />
-          <Route path="/admin_dashboard" element={<AdminDashboard />} />
-          <Route path="/company_dashboard" element={<CompanyDashboard />} />
           <Route path="/jobseeker_dashboard" element={<JobseekerDashboard />} />
           <Route path="/addjobs" element={<AddJobs />} />
           <Route path="/created_jobs" element={<CreatedJobs />} />
@@ -71,12 +74,21 @@ function App() {
 
 
           <Route path="/companies" element={<CompanyDetails />} />
+          <Route path="/admin_dashboard" element={<AdminDashboard />} />
+          <Route path="/company_dashboard" element={<CompanyDashboard />} />
           
 
          
           <Route path="/job-details/:jobId" element={<JobDetails/>} />
           <Route path="/job-details-jobseeker/:jobId" element={<JobDetails_Jobseeker/>} />
           <Route path="/ApplicantsTable" element={<ApplicantsTable />} />
+
+          
+          <Route path="/reset-password" element={<ResetPassword />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path= "/forget_password" element={<Forget_password/>} />
+
+          
 
 
 
@@ -87,5 +99,5 @@ function App() {
   );
 }
 
-
+//<Route path= "/forget_password" element={<Forget_password/>} />
 export default App;
